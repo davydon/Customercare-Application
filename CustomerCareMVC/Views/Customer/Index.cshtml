@@ -1,0 +1,104 @@
+﻿@model IEnumerable<CustomerCareMVC.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="customer">
+    <center>
+        <h2><b>Customer Care</b></h2>
+    </center>
+</div>
+
+
+<p>
+    
+    <div class="pull-right">
+        @using (Html.BeginForm("Index", "Customer", FormMethod.Get))
+        {
+            <b>Name:</b>@Html.TextBox("Name")
+            <input type="submit" value="Search" class="btn btn-success" />
+        }
+    </div>  
+</p>
+
+<br />
+
+<div class="col-md-2">
+
+    @{Html.RenderAction("SideMenu", "Admin");}
+</div>
+
+<br />
+
+<table class=" table-bordered table-condensed well" style="width:83%">
+    <tr class="list">
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlternativeNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlternativeNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit","Customer", new {id = item.CustomerId })" class="btn btn-success">
+            <span class="glyphicon glyphicon-edit"></span>
+            Edit</a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("Delete","Customer", new {id = item.CustomerId })" class="btn btn-success">
+                <span class="glyphicon glyphicon-trash"></span>
+                Delete
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

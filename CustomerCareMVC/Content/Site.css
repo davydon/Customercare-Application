@@ -1,0 +1,114 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color:palegreen;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.list{
+background-color:forestgreen;
+color:whitesmoke;
+}
+.head{
+    background-color:green;
+    color:white;
+    padding-top:10px;
+    padding-bottom:20px;
+    margin-right:150px;
+    margin-left:150px;
+
+}
+.customer{
+ background-color:green;
+    color:white;
+    padding-top:10px;
+    padding-bottom:20px;
+    
+}
+.link{
+    background-color:aqua;
+    margin-right:165px;
+    margin-left:165px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border:dashed;
+}
+.nlist{
+    color:blue;
+    font-weight:bold;
+    font-size:15px;
+    text-align:center;
+}
+.image{
+    background-color:aqua;
+    margin-right:165px;
+    margin-left:165px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.cimage{
+   image-orientation:initial;
+   text-align:center;
+}
+.feedback{
+    background-color:aqua;
+    margin-right:165px;
+    margin-left:165px;
+    margin-top:1px;
+}
+.login{
+    background-color:aqua;
+    margin-right:152px;
+    margin-left:152px;
+    
+    padding-bottom:10px;
+}
+.logout{
+    background-color:aqua;
+    margin-right:152px;
+    margin-left:152px;
+    
+    padding-bottom:10px;
+}
+.para{
+    text-align:center;
+    
+}
+.welcome{
+    text-align:center;
+    
+    border:thin;
+}
+.operator-menu{
+    background-color:whitesmoke;
+    padding-left:20px;
+    margin-right:650px;
+    font-size:15px;
+    font-weight:bold;
+    border:solid;
+    
+}
+.loged{
+ background-color:aqua;
+    margin-right:152px;
+    margin-left:152px;
+    margin-top:1px;
+}

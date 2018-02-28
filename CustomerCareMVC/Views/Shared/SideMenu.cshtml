@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "SideMenu";
+}
+
+<div class="panel panel-body">
+    
+    <div>
+        <a href="@Url.Action("Create","Customer")" class="btn btn-success btn-block">
+            <span class="glyphicon glyphicon-plus"></span>
+            New Customer
+        </a>
+        <br />
+
+        <a href="@Url.Action("Create","Order")" class="btn btn-success btn-block">
+            <span class="glyphicon glyphicon-plus"></span>
+            Place Order
+        </a>
+        <br />
+
+        <a href="@Url.Action("Create","Product")" class="btn btn-success btn-block">
+            <span class="glyphicon glyphicon-plus"></span>
+            Add Product
+        </a>
+        <br />
+
+        <a href="@Url.Action("Index","Order")" class="btn btn-success btn-block">
+            <span class="glyphicon glyphicon-list"></span>
+            Orders
+        </a>
+        <br />
+
+        <a href="@Url.Action("ListProduct","Product")" class="btn btn-success btn-block">
+            <span class="glyphicon glyphicon-list"></span>
+            Products
+        </a>
+        <br />
+        <a href="@Url.Action("Logout","Admin")" class="btn btn-success btn-block">
+            <span class="glyphicon glyphicon-log-out"></span>
+            Logout
+        </a>
+    </div>
+</div>
+

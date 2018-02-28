@@ -1,0 +1,40 @@
+﻿@model CustomerCareMVC.Models.Admin
+
+@{
+    ViewBag.Title = "Admin";
+}
+
+<div class="head">
+    <center>
+        <h2><b>Customer Care</b></h2>
+    </center>
+</div>
+
+<div class="row">
+    <div class="link">
+
+        <div class="nlist">
+            @Html.ActionLink("Home", "Index", "Home") |
+            @Html.ActionLink("Operator Login", "Login", "User") |
+            @Html.ActionLink("Administrator Login", "Login", "Admin") |
+        </div>
+
+    </div>
+</div>
+
+
+<div class="logout">
+    <div class="pull-right">
+        
+    </div>
+
+    <h5><b>Welcome: @Session["Username"].ToString()</b></h5>
+    <div class="operator-menu">
+    @Html.ActionLink("Home", "Index", "Home") <br /><br />
+    @Html.ActionLink("View Customer", "Index", "Customer") <br /><br />
+    @Html.ActionLink("Place Order", "Index", "Order") <br /><br />
+    @Html.ActionLink("View Products", "Index", "Product") <br /><br />
+    @Html.ActionLink("New Operator", "Index", "User") <br /><br />
+    @Html.ActionLink("Logout", "Logout", "Admin")
+    </div>
+</div>

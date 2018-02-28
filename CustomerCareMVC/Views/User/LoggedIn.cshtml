@@ -1,0 +1,48 @@
+﻿@model CustomerCareMVC.Models.User
+
+@{
+    ViewBag.Title = "LoggedIn";
+}
+
+<div class="head">
+    <center>
+        <h2><b>Customer Care</b></h2>
+    </center>
+</div>
+
+<div class="row">
+    <div class="link">
+
+        <div class="nlist">
+            | @Html.ActionLink("Home", "Index", "Home") |
+            @Html.ActionLink("Operator Login", "Login", "User") |
+            @Html.ActionLink("Administrator Login", "Login", "Admin") |
+        </div>
+
+  </div>
+    </div >
+
+<div class="logout">
+    
+
+    <h5><b>Welcome: @Session["Email"].ToString()</b></h5>
+    <h3 class="welcome">Welcome Operator</h3>
+    <div class="operator-menu">
+        
+        @Html.ActionLink("Home", "Index", "Home") <br /><br />
+        @Html.ActionLink("View Customer", "ListCustomer", "Customer") <br /><br />
+        @Html.ActionLink("View Order", "ListOrder", "Order") <br /><br />
+        @Html.ActionLink("View Products", "ListProduct", "Product") <br /><br />
+        @Html.ActionLink("Logout", "Logout", "User")
+    </div>
+    
+</div>
+<div>
+    <div class="loged">
+        <p class="para">
+            Your feedback will help us improve @Html.ActionLink("Please give us your feedback", "Contact", "Home")<br />
+            Developed & Maintained by :DavyJones
+        </p>
+
+    </div>
+</div>

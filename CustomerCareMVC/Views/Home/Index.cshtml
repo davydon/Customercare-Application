@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="head">
+    <center>
+        <h2><b>Customer Care</b></h2>
+    </center>
+</div>
+
+<div class="row">
+    <div class="link">
+        
+            <div class="nlist">
+                | @Html.ActionLink("Home","Index","Home") |
+                @Html.ActionLink("Operator Login", "Login", "User") |
+                @Html.ActionLink("Administrator Login", "Login", "Admin") |
+            </div>
+        
+        
+    </div>
+    <div class="image">
+        
+        <div class="cimage">
+            <img src="~/IMAGES/images.jpg "width="450" height="400" />
+        </div>
+
+    </div>
+    <div class="feedback">
+        <p class="para">Your feedback will help us improve @Html.ActionLink("Please give us your feedback", "Contact", "Home")<br />
+            Developed & Maintained by :DavyJones
+        </p>
+        
+    </div>
+</div>

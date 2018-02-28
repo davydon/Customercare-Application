@@ -1,0 +1,103 @@
+﻿@model IEnumerable<CustomerCareMVC.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Orders</h2>
+
+<p>
+    <div class="pull-right">
+        @using (Html.BeginForm("Index", "Order", FormMethod.Get))
+        {
+            <b>Customer Name:</b>@Html.TextBox("CustomerName")
+            <input type="submit"value="Search" class="btn btn-success" />
+        }
+    </div>
+    
+</p>
+
+<br />
+
+<div class="col-md-2">
+
+    @{Html.RenderAction("SideMenu", "Admin");}
+</div>
+
+<br />
+
+<table class=" table-bordered table-condensed well" style="width:83%">
+    <tr class="list">
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentMode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.Product.ProductName)
+        </th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentMode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.ProductName)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit","Order", new {id = item.OrderId })" class="btn btn-success">
+                <span class="glyphicon glyphicon-edit"></span>
+                Edit
+            </a>
+        </td>
+
+        <td>
+            <a href="@Url.Action("Delete","Order", new {id = item.OrderId })" class="btn btn-success">
+                <span class="glyphicon glyphicon-trash"></span>
+                Delete
+            </a>
+        </td>
+    </tr>
+}
+
+</table>

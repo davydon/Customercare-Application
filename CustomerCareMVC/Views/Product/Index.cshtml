@@ -1,0 +1,82 @@
+﻿@model IEnumerable<CustomerCareMVC.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Products</h2>
+
+<p>
+    <div class="pull-right">
+        @using (Html.BeginForm("Index", "Product", FormMethod.Get))
+        {
+            <b>Product Name:</b>@Html.TextBox("ProductName")
+            <input type="submit"value="Search" class="btn btn-success"/>
+        }
+    </div>
+</p>
+<br />
+
+<div class="col-md-2">
+
+    @{Html.RenderAction("SideMenu", "Admin");}
+</div>
+
+<br />
+
+<table class=" table-bordered table-condensed well" style="width:83%">
+    <tr class="list">
+        <th>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitPrice)
+        </td>
+        <td>
+            
+                <a href="@Url.Action("Edit","Product", new {id = item.ProductId })" class="btn btn-success">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                </a>
+                
+         </td>
+        <td>
+            <a href="@Url.Action("Delete","Product", new {id = item.ProductId })" class="btn btn-success">
+                <span class="glyphicon glyphicon-trash"></span>
+                Delete
+            </a>
+        </td>
+    </tr>
+}
+
+</table>
